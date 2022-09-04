@@ -1,22 +1,18 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
 import FirstPage from './components/FirstPage';
 import SecondPage from './components/SecondPage';
+import{ Routes, Route} from 'react-router-dom'
 
 function App() {
-  const [Pages, setPages] = useState('first')
-  const linkHandler = (event, pages) => {
-    event.preventDefault()
-    setPages(pages)
-  }
+
   return (
     <div className="App">
-      <h1>Pages React</h1>
-      <div style={{textAlign : 'center', display : 'flex', gap :' 0.5em'}}>
-        <a href='#' onClick={(event) => linkHandler(event, 'first')}>First</a>
-        <a href='#' onClick={(event) => linkHandler(event, 'second')}>Second</a>
-      </div> 
-      {Pages === 'first' ? <FirstPage /> : <SecondPage />}
+      <h1>React Router Dom</h1>
+      <Routes>
+        <Route path='/' element={<FirstPage />}/>
+        <Route path='/second-page' element={<SecondPage />}/>
+      </Routes>
     </div>
   );
 }
