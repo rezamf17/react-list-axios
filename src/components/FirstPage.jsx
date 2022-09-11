@@ -6,6 +6,7 @@ const FirstPage = () => {
         <div>
             <h1>First Page</h1>
             <Link to='/second-page'>Second Page</Link>
+            <Link to='/formulir'>Formulir</Link>
         </div>
     )
 }
