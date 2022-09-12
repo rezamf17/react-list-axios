@@ -10,7 +10,7 @@ const AnimalPage = () => {
             const selectedAnimal = getAnimal(params.animalId)
             setAnimal(selectedAnimal)
         },
-        []
+        [params.animalId]
     )
     return(
         <>

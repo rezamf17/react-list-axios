@@ -16,8 +16,9 @@ function App() {
         <Route path='/' element={<FirstPage />}/>
         <Route path='/second-page' element={<SecondPage />}/>
         <Route path='/formulir' element={<FormPage />} />
-        <Route path='/animals' element={<AnimalList />} />
-        <Route path='animals/:animalId' element={<AnimalPage />} />
+        <Route path='animals' element={<AnimalList />}>
+        <Route path=':animalId' element={<AnimalPage />} />
+          </Route>
       </Routes>
     </div>
   );

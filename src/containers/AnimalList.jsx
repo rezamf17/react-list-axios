@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useSearchParams, useNavigate } from 'react-router-dom';
+import { useSearchParams, useNavigate, Link, Outlet } from 'react-router-dom';
 import { getAnimals } from '../data/animal'
 
 const AnimalList = () => {
@@ -30,6 +30,7 @@ const AnimalList = () => {
         <>
             <h1>List Animal</h1>
             <p>Akan difilter dengan cara {queryStrings.get('filter')}</p>
+            <div>
             <table>
                 <thead>
                     <tr>
@@ -51,12 +52,17 @@ const AnimalList = () => {
                             </td>
                             <td key={item.animalId}>{item.price}</td>
                             <td>
-                                <a href='#' onClick={handlerAnimalDetail}>Detail</a>
+                                {/* <a href='#' onClick={handlerAnimalDetail}>Detail</a> */}
+                                <Link to={`/animals/${item.animalId}`}>Detail</Link>
                             </td>
                         </tr>)
                     })}
                 </tbody>
             </table>
+            <div>
+                <Outlet />
+            </div>
+            </div>
         </>
     )
 }
