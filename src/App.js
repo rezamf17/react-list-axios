@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>React Router Dom</h1>
+      <h1 className='text-3xl antialiased md:subpixel-antialiased'>React Router Dom</h1>
       <Routes>
         <Route path='/' element={<FirstPage />}/>
         <Route path='/second-page' element={<SecondPage />}/>
@@ -19,6 +19,7 @@ function App() {
         <Route path='animals' element={<AnimalList />}>
         <Route path=':animalId' element={<AnimalPage />} />
           </Route>
+      <Route path='*' element={<>Halaman Tidak Ditemukan</>} />
       </Routes>
     </div>
   );
